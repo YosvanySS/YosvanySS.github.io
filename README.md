@@ -8,6 +8,8 @@ Text that is not a quote
 
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 
+![tokama_bw-shades](https://github.com/YosvanySS/YosvanySS.github.io/assets/113038567/095b3cbb-e5f8-47dc-8afc-322595b13edc)
+
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
