@@ -1,1 +1,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+// Initialize Three.js
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Load .obj file
+var loader = new THREE.OBJLoader();
+loader.load(
+  'path/to/your/model.obj',
+  function (object) {
+    scene.add(object);
+  }
+);
+
+// Set up camera
+camera.position.z = 5;
+
+// Render loop
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
+animate();
+</script>
