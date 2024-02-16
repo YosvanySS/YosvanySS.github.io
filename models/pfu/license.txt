@@ -1,0 +1,11 @@
+Model Information:
+* title:	Plasma Facing Unit
+* source:	https://sketchfab.com/3d-models/plasma-facing-unit-8654b7c1e43e4ed39587c8a39252b84d
+* author:	yosvanyss (https://sketchfab.com/yosvanyss)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Plasma Facing Unit" (https://sketchfab.com/3d-models/plasma-facing-unit-8654b7c1e43e4ed39587c8a39252b84d) by yosvanyss (https://sketchfab.com/yosvanyss) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
