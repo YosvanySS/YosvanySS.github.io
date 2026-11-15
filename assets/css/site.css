@@ -265,8 +265,9 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Contact ---------- */
 .contact-item { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-2); color: var(--text); transition: .2s; }
+.contact-item .ic sup { font-size: .62em; position: relative; top: -.38em; vertical-align: baseline; line-height: 0; }
 .contact-item:hover { border-color: var(--gold); color: var(--text); }
-.contact-item .ic { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: var(--gold-dim); color: var(--gold); font-weight: 800; font-family: var(--display); font-size: 18px; flex: none; }
+.contact-item .ic { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; white-space: nowrap; letter-spacing: -.5px; background: var(--gold-dim); color: var(--gold); font-weight: 800; font-family: var(--display); font-size: 18px; flex: none; }
 .contact-item small { display: block; color: var(--muted); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
 
 /* ---------- Footer ---------- */
