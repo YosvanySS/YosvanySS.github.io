@@ -1,0 +1,126 @@
+/* =========================================================
+   Printable CV — A4, clean and professional.
+   Screen: the CV is shown as A4 sheets with a toolbar.
+   Print / PDF: only the CV, with page numbers in the footer.
+   ========================================================= */
+html:not(.lang-fr) fr, html.lang-fr en { display: none !important; }
+
+:root {
+  --ink: #1b1d24;
+  --muted: #5d6170;
+  --line: #d9dbe2;
+  --accent: #9a6b12;      /* deep gold, prints well */
+  --accent-soft: #f6efe0;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: #2a2b31; font-family: var(--sans); color: var(--ink); }
+
+/* ---------- Toolbar (screen only) ---------- */
+.toolbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px;
+  padding: 12px 24px; background: #0b0b0d; border-bottom: 1px solid #2a2a31; color: #ecebe6;
+}
+.toolbar .back { color: #e3b553; text-decoration: none; font-size: 14px; font-weight: 600; margin-right: auto; }
+.toolbar .group { display: flex; align-items: center; gap: 4px; background: #16161b; border: 1px solid #2a2a31; border-radius: 99px; padding: 3px; }
+.toolbar .lbl { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #9b9aa3; padding: 0 8px 0 10px; }
+.toolbar button { font: 600 13px var(--sans); cursor: pointer; border: 0; border-radius: 99px; padding: 7px 14px; background: transparent; color: #cfcdc6; }
+.toolbar .group button.active { background: #e3b553; color: #111; }
+.toolbar .primary { background: #e3b553; color: #111; padding: 9px 18px; }
+.toolbar .primary:hover { background: #f3d58a; }
+.toolbar .pages { font-size: 12px; color: #9b9aa3; }
+.toolbar .pages b { color: #e3b553; }
+.page-break {
+  position: absolute; left: 0; right: 0; height: 0; border-top: 1px dashed #c7cad3; pointer-events: none;
+}
+.page-break span { position: absolute; right: 6px; top: -9px; background: #fff; color: #9aa0ad; font-size: 8pt; padding: 0 4px; }
+.toolbar .hint { flex-basis: 100%; margin: 0; font-size: 12px; color: #9b9aa3; text-align: right; }
+.lang-switch { display: flex; gap: 2px; padding: 3px; border: 1px solid #2a2a31; border-radius: 99px; background: #16161b; }
+.lang-switch button { padding: 5px 7px; line-height: 0; opacity: .45; filter: grayscale(.6); }
+.lang-switch button svg { width: 24px; height: 16px; border-radius: 3px; }
+.lang-switch button.active { opacity: 1; filter: none; background: rgba(227,181,83,.14); box-shadow: inset 0 0 0 1px rgba(227,181,83,.6); }
+
+/* ---------- The CV sheet ---------- */
+.cv {
+  /* Same margins as the printed page (@page below), so the preview matches the PDF */
+  position: relative;
+  width: 210mm; min-height: 297mm; margin: 28px auto 60px; padding: 13mm 14mm 15mm;
+  background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,.45);
+  font-size: 9.6pt; line-height: 1.42;
+}
+.cv a { color: inherit; text-decoration: none; }
+
+.cv-head { display: flex; justify-content: space-between; gap: 18px; align-items: flex-end;
+  padding-bottom: 10px; border-bottom: 2px solid var(--accent); margin-bottom: 4px; }
+.cv-head h1 { font-family: var(--serif); font-size: 25pt; line-height: 1.05; margin: 0 0 3px; letter-spacing: .2px; }
+.cv-role { font-weight: 600; color: var(--accent); font-size: 10.5pt; }
+.cv-aff { color: var(--muted); font-size: 9pt; }
+.cv-contact { display: grid; grid-template-columns: auto auto; gap: 1px 8px; font-size: 8.3pt; color: var(--muted); line-height: 1.45; flex: none; }
+.cv-contact a { display: contents; }
+.cv-contact b { color: var(--accent); font-weight: 600; text-align: right; font-size: 7.6pt; letter-spacing: .6px; text-transform: uppercase; padding-top: 1px; }
+
+.cv-sec { margin-top: 11px; }
+.cv-sec h2 {
+  font-family: var(--serif); font-size: 12pt; margin: 0 0 6px; color: var(--ink);
+  display: flex; align-items: center; gap: 8px; break-after: avoid;
+}
+.cv-sec h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.cv-sec h3 { font-size: 8.6pt; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin: 9px 0 4px; break-after: avoid; }
+.cv-p { margin: 0 0 6px; text-align: justify; hyphens: auto; }
+
+.cv-entry { display: grid; grid-template-columns: 26mm 1fr; gap: 0 10px; margin-bottom: 5px; break-inside: avoid; }
+.cv-date { color: var(--muted); font-size: 8.6pt; font-variant-numeric: tabular-nums; padding-top: 1px; }
+.cv-title { font-weight: 600; }
+.cv-sub { color: var(--muted); font-style: italic; font-size: 9pt; }
+.cv-desc { font-size: 9pt; }
+
+.cv-facts { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin: 4px 0 2px; }
+.cv-facts div { background: var(--accent-soft); border-radius: 4px; padding: 5px 6px; text-align: center; line-height: 1.15; }
+.cv-facts b { display: block; font-family: var(--serif); font-size: 14pt; color: var(--accent); }
+.cv-facts span { font-size: 7.4pt; color: var(--muted); }
+
+.cv-pubs { list-style: none; margin: 0; padding: 0; }
+.cv-pubs li { display: grid; grid-template-columns: 9mm 1fr; margin-bottom: 4px; break-inside: avoid; font-size: 9pt; }
+.cv-num { color: var(--accent); font-weight: 600; }
+.cv-pubs u { text-decoration: none; font-weight: 700; }
+.cv-pubs a { color: var(--muted); }
+
+.cv-compact { margin: 0; padding-left: 14px; }
+.cv-compact li { margin-bottom: 2px; font-size: 9pt; break-inside: avoid; }
+.cv-cols { columns: 2; column-gap: 8mm; }
+
+.cv-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.cv-table td { padding: 3px 6px 3px 0; vertical-align: top; border-bottom: 1px solid #eef0f3; }
+.cv-table td:first-child { white-space: nowrap; color: var(--muted); width: 26mm; }
+.cv-table.cv-skills td:first-child { color: var(--ink); width: 42mm; white-space: normal; }
+.cv-table span { color: var(--muted); }
+.cv-table .r { text-align: right; white-space: nowrap; }
+.cv-kw { margin-top: 10px; font-size: 8.6pt; color: var(--muted); }
+
+/* Length-specific density */
+.cv.len-1 { font-size: 9pt; line-height: 1.32; }
+.cv.len-1 .cv-sec { margin-top: 7px; }
+.cv.len-1 .cv-sec h2 { margin-bottom: 4px; }
+.cv.len-1 .cv-pubs li { margin-bottom: 2px; font-size: 8.8pt; }
+.cv.len-1 .cv-head h1 { font-size: 23pt; }
+.cv.len-1 .cv-entry { margin-bottom: 3px; }
+.cv.len-full { font-size: 10pt; line-height: 1.48; }
+.cv.len-full .cv-sec { margin-top: 14px; }
+.cv.len-full .cv-entry { margin-bottom: 7px; }
+
+/* ---------- Print / PDF ---------- */
+@page {
+  size: A4;
+  margin: 13mm 14mm 15mm;
+  @bottom-left { content: "Yosvany Silva Solís — Curriculum Vitae"; font: 7.5pt Inter, sans-serif; color: #8a8e9a; }
+  @bottom-right { content: counter(page) " / " counter(pages); font: 7.5pt Inter, sans-serif; color: #8a8e9a; }
+}
+@media print {
+  body { background: #fff; }
+  .toolbar, .page-break { display: none !important; }
+  .cv, .cv.len-1 { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  .cv a { color: inherit; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

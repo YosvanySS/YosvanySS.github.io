@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fr="CV — Yosvany Silva Solís">CV — Yosvany Silva Solís</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cv.css">
+  <script src="assets/js/lang.js"></script>
+</head>
+<body>
+  <!-- Toolbar: only on screen, never printed -->
+  <div class="toolbar">
+    <a class="back" href="index.html">← <en>Back to website</en><fr>Retour au site</fr></a>
+    <div class="group" role="group" aria-label="Length">
+      <span class="lbl"><en>Length</en><fr>Longueur</fr></span>
+      <button type="button" data-len="1"><en>1 page</en><fr>1 page</fr></button>
+      <button type="button" data-len="3"><en>3 pages</en><fr>3 pages</fr></button>
+      <button type="button" data-len="full"><en>Full</en><fr>Complet</fr></button>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-c"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#uk-c)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg></button>
+      <button type="button" data-lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" x="0" fill="#002654"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#CE1126"/></svg></button>
+    </div>
+    <span class="pages" id="page-count"></span>
+    <button type="button" id="print" class="primary">⬇ <en>Download PDF</en><fr>Télécharger le PDF</fr></button>
+    <p class="hint"><en>In the print window, choose <b>“Save as PDF”</b> as destination.</en><fr>Dans la fenêtre d'impression, choisissez <b>«&nbsp;Enregistrer au format PDF&nbsp;»</b> comme destination.</fr></p>
+  </div>
+
+  <main id="cv" class="cv"></main>
+
+  <script src="assets/js/conferences.js"></script>
+  <script src="assets/js/cv-data.js"></script>
+  <script>
+    document.querySelectorAll(".lang-switch button").forEach((b) =>
+      b.addEventListener("click", () => window.setLang(b.dataset.lang))
+    );
+  </script>
+  <script src="assets/js/cv.js"></script>
+</body>
+</html>
