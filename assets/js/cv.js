@@ -22,7 +22,7 @@
     positions: { en: "Professional experience", fr: "Expérience professionnelle" },
     education: { en: "Education", fr: "Formation" },
     projects: { en: "Research projects", fr: "Projets de recherche" },
-    funding: { en: "Funding & supervision", fr: "Financements & encadrement" },
+    funding: { en: "Supervision", fr: "Encadrement" },
     grants: { en: "Research funding", fr: "Financements de recherche" },
     supervision: { en: "Supervision", fr: "Encadrement" },
     pubs: { en: "Publications", fr: "Publications" },
@@ -166,10 +166,10 @@
   }
 
   function fundingSupervision() {
-    const g = (CV.funding || []).filter(inLen), su = (CV.supervision || []).filter(inLen);
+    const g = (CV.funding || []).filter((x) => !x.hidden && inLen(x)), su = (CV.supervision || []).filter(inLen);
     let html = "";
     if (g.length) html += `<h3>${t(W.grants)}</h3>` + g.map((x) => entry(t(x.date), t(x.title), "", t(x.desc))).join("");
-    if (su.length) html += `<h3>${t(W.supervision)}</h3>` + su.map((x) => entry(t(x.date), t(x.title), "", t(x.desc))).join("");
+    if (su.length) html += (g.length ? `<h3>${t(W.supervision)}</h3>` : "") + su.map((x) => entry(t(x.date), t(x.title), "", t(x.desc))).join("");
     return html;
   }
 
@@ -199,7 +199,8 @@
     parts.push(section(W.positions, positions()));
     parts.push(section(W.education, education()));
     if (len > 1) parts.push(section(W.projects, projects()));
-    if (len > 1) parts.push(section(W.funding, fundingSupervision()));
+    const hasGrants = (CV.funding || []).some((x) => !x.hidden && inLen(x));
+    if (len > 1) parts.push(section(hasGrants ? { en: "Funding & supervision", fr: "Financements & encadrement" } : W.funding, fundingSupervision()));
     parts.push(section(len === 1 ? W.selPubs : W.pubs, publications()));
     parts.push(section(len === 1 ? W.selTalks : W.talks, talks()));
     if (len > 1) parts.push(section(W.teaching, teaching()));

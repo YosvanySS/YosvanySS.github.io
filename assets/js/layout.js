@@ -179,6 +179,13 @@ document.addEventListener("click", (e) => {
 
 if (typeof renderIcons === "function") renderIcons();
 
+// Student photos: if the image file is missing, show the initials instead
+document.querySelectorAll(".student-photo img").forEach((img) => {
+  const fail = () => img.parentElement.classList.add("no-photo");
+  if (img.complete && img.naturalWidth === 0) fail();
+  img.addEventListener("error", fail);
+});
+
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".nav").classList.toggle("open");
 });

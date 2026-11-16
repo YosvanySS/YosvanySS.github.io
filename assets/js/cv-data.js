@@ -80,8 +80,9 @@ const CV = {
   ],
 
   // Funding and supervision (shown in the 3-page and full CVs)
+  // ANR SPARTES not funded: kept here for later. To show it again, change "hidden: true" to "cv: 3".
   funding: [
-    { cv: 3, date: { en: "2025 – 2026", fr: "2025 – 2026" }, title: { en: "ANR project SPARTES, selected for phase 2", fr: "Projet ANR SPARTES, retenu en phase 2" },
+    { hidden: true, cv: 99, date: { en: "2025 – 2026", fr: "2025 – 2026" }, title: { en: "ANR project SPARTES, selected for phase 2", fr: "Projet ANR SPARTES, retenu en phase 2" },
       desc: { en: "“Sputtering of atomic hydrogen and oxygen on tungsten surface”: collaborative project, 48 months, 360 k€ requested. Co-author of the proposal; leader of the molecular dynamics sub-task (D ions on W surfaces, sputtering of adsorbed H and O).",
               fr: "« Sputtering of atomic hydrogen and oxygen on tungsten surface » : projet de recherche collaborative, 48 mois, 360 k€ demandés. Co-rédacteur ; responsable de la sous-tâche de dynamique moléculaire (ions D sur surfaces de W, pulvérisation de H et O adsorbés)." } },
   ],

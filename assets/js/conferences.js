@@ -141,7 +141,7 @@ const showType = (t) => both(t, TYPE_FR[t] || t);
 const showNote = (c) => both(c.note, c.note_fr || NOTE_FR[c.note] || c.note);
 
 /* ---------- Render the scrollable list ---------- */
-const BADGE = { oral: "oral", invited: "org", seminar: "oral", "co-author": "other", poster: "poster", "single figure": "poster", organizer: "org", attendee: "other" };
+const BADGE = { oral: "oral", invited: "invited", seminar: "oral", "co-author": "other", poster: "poster", "single figure": "poster", organizer: "org", attendee: "other" };
 
 // "oral, organizer" -> ["oral", "organizer"]
 const typesOf = (c) => String(c.type).split(",").map((t) => t.trim().toLowerCase()).filter(Boolean);
