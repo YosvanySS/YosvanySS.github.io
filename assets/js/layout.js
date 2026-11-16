@@ -7,7 +7,7 @@
 const PROFILE = {
   name: "Yosvany Silva Solís",
   initials: "YSS",
-  photo: "", // later: put your photo in assets/img/ and write e.g. "assets/img/photo.jpg"
+  photo: "assets/img/profile.jpg", // your photo: put a square image with this name in assets/img/ (initials are shown until it exists)
   tagline: {
     en: "Multiscale modeling of materials for fusion energy",
     fr: "Modélisation multi-échelle des matériaux pour l'énergie de fusion",
@@ -93,9 +93,9 @@ function topbar() {
 }
 
 function hero() {
-  const avatar = PROFILE.photo
-    ? `<img src="${PROFILE.photo}" alt="${PROFILE.name}">`
-    : PROFILE.initials;
+  // initials always underneath; the photo covers them once the file exists
+  const avatar = `<span class="avatar-initials">${PROFILE.initials}</span>` +
+    (PROFILE.photo ? `<img src="${PROFILE.photo}" alt="${PROFILE.name}" onerror="this.remove()">` : "");
   const tags = PROFILE.tags.map((t) => `<span class="tag ${t.style}">${tr(t.text)}</span>`).join("");
   const meta = PROFILE.meta
     .map((m) => `<div><small>${tr(m.label)}</small><strong>${tr(m.value)}</strong></div>`)

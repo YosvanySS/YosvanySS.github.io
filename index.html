@@ -87,22 +87,9 @@
     -->
 
     <h2 class="section-title"><en>Supervision</en><fr>Encadrement</fr></h2>
-    <!-- STUDENTS: one card per student. To add a student, copy a whole <article class="student">…</article> block.
-         PHOTO: put a square photo in assets/img/students/ (e.g. firstname-lastname.jpg) and write its path in src.
-         Without a photo, the student's initials (data-initials) are shown instead. -->
-    <div class="grid two students">
-      <article class="panel student">
-        <div class="student-photo" data-initials="SS"><img src="assets/img/students/sophie-stibac.jpg" alt="Sophie Stibac"></div>
-        <div class="student-info">
-          <div class="student-head">
-            <h3>Sophie Stibac</h3>
-            <span class="badge oral"><en>PhD · since Oct 2025</en><fr>Thèse · depuis oct. 2025</fr></span>
-          </div>
-          <p class="student-title">Machine Learning Interatomic Potential for the W-Cu System in View of Modeling Interfaces in ITER Monoblocks</p>
-          <p class="student-meta"><en>Co-supervision · Supervisors: Yves Ferro (AMU-PIIM) and Etienne Hodille (CEA-IRFM) · Doctoral School ED352</en><fr>Co-encadrement · Directeurs : Yves Ferro (AMU-PIIM) et Etienne Hodille (CEA-IRFM) · École doctorale ED352</fr></p>
-        </div>
-      </article>
-    </div>
+    <!-- STUDENTS: the cards are made automatically from assets/js/students.js
+         (add a student there, not here). -->
+    <div id="students"></div>
     <p class="muted-note" style="margin-top:12px"><en>Also member of a doctoral follow-up committee (CSI), 2026.</en><fr>Également membre d'un comité de suivi individuel (CSI), 2026.</fr></p>
 
     <h2 class="section-title"><en>Explore my thesis in 3D</en><fr>Ma thèse en 3D</fr></h2>
@@ -117,5 +104,6 @@
 
   <script src="assets/js/icons.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/students.js"></script>
 </body>
 </html>
