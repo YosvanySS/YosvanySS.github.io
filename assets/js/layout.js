@@ -24,8 +24,8 @@ const PROFILE = {
   stats: [
     { label: { en: "Articles", fr: "Articles" }, value: "5", color: "g" },
     { label: { en: "Books", fr: "Livres" }, value: "2", color: "y" },
-    { label: { en: "Talks & posters", fr: "Communications" }, value: "25", color: "b" },
-    { label: { en: "Years in research", fr: "Années de recherche" }, value: "7+", color: "r" },
+    { label: { en: "Talks & posters", fr: "Communications" }, value: "26", color: "b" },
+    { label: { en: "Years in research", fr: "Ans de recherche" }, value: "7+", color: "r" },
   ],
 };
 
@@ -39,14 +39,14 @@ const LINKS = {
 };
 
 const PAGES = [
-  { file: "index.html", label: { en: "Overview", fr: "Accueil" }, icon: "◈" },
-  { file: "education.html", label: { en: "Education", fr: "Formation" }, icon: "🎓" },
-  { file: "experience.html", label: { en: "Experience", fr: "Expérience" }, icon: "⚑" },
-  { file: "publications.html", label: { en: "Publications", fr: "Publications" }, icon: "📄" },
-  { file: "skills.html", label: { en: "Skills", fr: "Compétences" }, icon: "⚛" },
-  { file: "research-3d.html", label: { en: "3D Research", fr: "Recherche 3D" }, icon: "◆" },
-  { file: "outreach.html", label: { en: "Outreach", fr: "Médiation" }, icon: "✦" },
-  { file: "contact.html", label: { en: "Contact", fr: "Contact" }, icon: "✉" },
+  { file: "index.html", label: { en: "Overview", fr: "Accueil" }, icon: "house" },
+  { file: "education.html", label: { en: "Education", fr: "Formation" }, icon: "graduation-cap" },
+  { file: "experience.html", label: { en: "Experience", fr: "Expérience" }, icon: "briefcase" },
+  { file: "publications.html", label: { en: "Publications", fr: "Publications" }, icon: "book-open" },
+  { file: "skills.html", label: { en: "Skills", fr: "Compétences" }, icon: "layers" },
+  { file: "research-3d.html", label: { en: "3D Research", fr: "Recherche 3D" }, icon: "box" },
+  { file: "outreach.html", label: { en: "Outreach", fr: "Médiation" }, icon: "megaphone" },
+  { file: "contact.html", label: { en: "Contact", fr: "Contact" }, icon: "mail" },
 ];
 
 /* ---------- helpers ---------- */
@@ -114,7 +114,7 @@ function hero() {
       <div class="meta">${meta}</div>
     </div>
     <div class="hero-side">
-      <a class="btn cv-btn" href="cv.html">⬇ ${tr({ en: "Download CV", fr: "Télécharger le CV" })} <small>PDF</small></a>
+      <a class="btn cv-btn" href="cv.html">${iconSVG("download")}${tr({ en: "Download CV", fr: "Télécharger le CV" })} <small>PDF</small></a>
       <div class="stats">${stats}</div>
     </div>
   </section>`;
@@ -123,7 +123,7 @@ function hero() {
 function tabbar() {
   return `<nav class="tabbar">${PAGES.map(
     (p) =>
-      `<a href="${p.file}" class="${p === currentPage ? "active" : ""}">${p.icon}&nbsp; ${tr(p.label)}</a>`
+      `<a href="${p.file}" class="${p === currentPage ? "active" : ""}">${iconSVG(p.icon)}${tr(p.label)}</a>`
   ).join("")}</nav>`;
 }
 
@@ -176,6 +176,8 @@ window.addEventListener("resize", () => placeGlow(false));
 document.addEventListener("click", (e) => {
   if (e.target.closest(".lang-switch")) setTimeout(() => placeGlow(false), 0); // labels change width
 });
+
+if (typeof renderIcons === "function") renderIcons();
 
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".nav").classList.toggle("open");

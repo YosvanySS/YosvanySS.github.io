@@ -8,7 +8,7 @@
    talk:   title of your presentation (optional, "" if none)
    place:  "City, Country 🇫🇷"  — use the same spelling each time so
            the map counts countries correctly
-   type:   "oral" | "poster" | "seminar" | "single figure" | "attendee" | "organizer" | "invited"
+   type:   "oral" | "poster" | "seminar" | "single figure" | "attendee" | "organizer" | "invited" | "co-author"
            Several roles? Separate them with a comma: "oral, organizer"
    note:   a highlight shown in gold (optional, "" if none)
    note_fr: French version of the note (optional; otherwise see NOTE_FR below)
@@ -22,7 +22,13 @@ const CONFERENCES = [
     place: "Jeju, South Korea 🇰🇷", type: "poster", url: "https://www.mmm12.org/", note: "", lat: 33.4996, lng: 126.5312 },
   { date: "Oct 2026", title: "Journées de la Matière Condensée (JMC 2026)",
     talk: "Toward a multiscale understanding of W-Re-H system under fusion-relevant conditions",
-    place: "Toulouse, France 🇫🇷", type: "oral", url: "https://jmc2026.sciencesconf.org/", note: "", lat: 43.6047, lng: 1.4442 },
+    place: "Toulouse, France 🇫🇷", type: "oral, invited", url: "https://jmc2026.sciencesconf.org/", note: "", lat: 43.6047, lng: 1.4442 },
+  { date: "Jun 2026", title: "Journées Plénières GDR IAMAT 2026",
+    talk: "Machine Learning Interatomic Potential for the binary W-Cu system in view of modelling a metallic interface",
+    place: "Aix-en-Provence, France 🇫🇷", type: "co-author", url: "https://gdr-iamat-plenieres.sciencesconf.org/", note: "Presented by my co-supervised PhD student Sophie Stibac", note_fr: "Présenté par Sophie Stibac, doctorante que je co-encadre", lat: 43.5297, lng: 5.4474 },
+  { date: "Apr 2026", title: "7ème Colloque de Prospectives et 20 ans de la FR-FCM/ITER",
+    talk: "Multi-scale modeling of plasma-material interactions in nuclear fusion devices",
+    place: "Sète, France 🇫🇷", type: "oral, invited", url: "https://frfcm2026.sciencesconf.org/", note: "", lat: 43.4028, lng: 3.6928 },
   { date: "Oct 2024", title: "Journées de la Matière Condensée (JMC 2024)",
     talk: "Multi-scale model for studying the segregation and diffusion of H atoms at the W/Cu interface",
     place: "Marseille, France 🇫🇷", type: "oral", url: "https://jmc2024.sciencesconf.org/", note: "", lat: 43.2965, lng: 5.3698 },
@@ -108,7 +114,7 @@ const CONFERENCES = [
 
 /* ---------- French translations used when the site is in French ---------- */
 // Types of participation
-const TYPE_FR = { oral: "oral", invited: "invité", seminar: "séminaire", poster: "poster",
+const TYPE_FR = { oral: "oral", invited: "invité", seminar: "séminaire", poster: "poster", "co-author": "co-auteur",
   "single figure": "figure unique", organizer: "organisateur", attendee: "participant" };
 // Months: "Nov 2026" -> "nov. 2026"
 const MONTH_FR = { Jan: "janv.", Feb: "févr.", Mar: "mars", Apr: "avr.", May: "mai", Jun: "juin",
@@ -135,7 +141,7 @@ const showType = (t) => both(t, TYPE_FR[t] || t);
 const showNote = (c) => both(c.note, c.note_fr || NOTE_FR[c.note] || c.note);
 
 /* ---------- Render the scrollable list ---------- */
-const BADGE = { oral: "oral", invited: "oral", seminar: "oral", poster: "poster", "single figure": "poster", organizer: "org", attendee: "other" };
+const BADGE = { oral: "oral", invited: "org", seminar: "oral", "co-author": "other", poster: "poster", "single figure": "poster", organizer: "org", attendee: "other" };
 
 // "oral, organizer" -> ["oral", "organizer"]
 const typesOf = (c) => String(c.type).split(",").map((t) => t.trim().toLowerCase()).filter(Boolean);
@@ -212,7 +218,7 @@ if (mapEl && window.L) {
       const box = L.DomUtil.create("div", "leaflet-bar");
       const btn = L.DomUtil.create("a", "map-recenter", box);
       btn.href = "#";
-      btn.innerHTML = "⌖";
+      btn.innerHTML = typeof iconSVG === "function" ? iconSVG("locate-fixed") : "⌖";
       btn.title = "Recenter / Recentrer";
       L.DomEvent.on(btn, "click", (e) => { L.DomEvent.preventDefault(e); frame(); });
       return box;

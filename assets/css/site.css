@@ -113,7 +113,7 @@ img { max-width: 100%; display: block; }
     var(--glass);
   border: 1px solid var(--line); border-radius: var(--radius);
   /* fixed side column so the layout is identical in English and French */
-  display: grid; grid-template-columns: 150px minmax(0, 1fr) 300px; gap: 30px; align-items: center;
+  display: grid; grid-template-columns: 150px minmax(0, 1fr) 330px; gap: 30px; align-items: center;
   overflow: hidden;
 }
 .hero::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(var(--gold), transparent); }
@@ -143,8 +143,8 @@ img { max-width: 100%; display: block; }
 .meta strong { font-weight: 600; }
 
 .stats { display: grid; grid-template-columns: repeat(2, minmax(110px, 1fr)); gap: 12px; }
-.stat { background: rgba(11,11,13,.6); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
-.stat small { display: block; color: var(--muted); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
+.stat { background: rgba(11,11,13,.6); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.stat small { display: block; color: var(--muted); font-size: 10.5px; letter-spacing: .7px; text-transform: uppercase; white-space: nowrap; }
 .stat b { font-family: var(--display); font-size: 34px; line-height: 1.1; }
 .stat.g b { color: var(--green); } .stat.y b { color: var(--gold); } .stat.b b { color: var(--blue); } .stat.r b { color: var(--red); }
 
@@ -343,7 +343,8 @@ img { max-width: 100%; display: block; }
 /* Shorter scroll boxes (work experience & courses) */
 .scroll-short { max-height: 400px; }
 .timeline.scroll-list { padding-left: 26px; padding-top: 4px; }
-.leaflet-bar a.map-recenter { font-size: 18px; line-height: 30px; }
+.leaflet-bar a.map-recenter { display: grid !important; place-items: center; }
+.leaflet-bar a.map-recenter .svg-icon { width: 16px; height: 16px; }
 /* CV button: top-right corner of the profile card, above the stats */
 .hero-side { display: flex; flex-direction: column; align-items: stretch; gap: 12px; align-self: stretch; justify-content: space-between; }
 .hero .cv-btn { justify-content: center; padding: 10px 14px; }
@@ -370,3 +371,45 @@ img { max-width: 100%; display: block; }
   :root { --glass: var(--panel); }
   .panel, .tabbar, .hero { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
+
+/* ---------- Icons (Lucide + Simple Icons, inline SVG) ---------- */
+.svg-icon { width: 1.15em; height: 1.15em; flex: none; vertical-align: -0.2em; }
+.tabbar a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.tabbar a .svg-icon { width: 16px; height: 16px; opacity: .85; }
+.btn .svg-icon { width: 15px; height: 15px; }
+.skill-icon .svg-icon { width: 22px; height: 22px; color: var(--gold); }
+.card-link .thumb .svg-icon { width: 46px; height: 46px; color: var(--gold); stroke-width: 1.5; }
+.contact-item .ic .svg-icon { width: 20px; height: 20px; }
+.panel-title .svg-icon { width: 16px; height: 16px; color: var(--gold); }
+
+/* ---------- Skills page: readable lists ---------- */
+.skill-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 7px; }
+.skill-list li { position: relative; padding-left: 22px; color: #cfcdc6; font-size: 14px; line-height: 1.45; }
+.skill-list li::before {
+  content: ""; position: absolute; left: 2px; top: .45em; width: 9px; height: 5px;
+  border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(-45deg);
+}
+.skill-groups { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 12px 18px; align-items: baseline; }
+.skill-groups dt { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.skill-groups dt .svg-icon { width: 16px; height: 16px; }
+.skill-groups dd { margin: 0; color: #cfcdc6; font-size: 14px; line-height: 1.55; }
+.lang-rows { display: grid; gap: 16px; }
+.lang-rows > div { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 14px; }
+.lang-rows span { font-weight: 600; }
+.lang-rows small { color: var(--muted); font-size: 12px; min-width: 100px; text-align: right; }
+@media (max-width: 760px) {
+  .skill-groups { grid-template-columns: 1fr; gap: 4px; }
+  .skill-groups dd { margin-bottom: 10px; }
+}
+.rows-group {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  margin: 14px 0 2px; padding-bottom: 6px; border-bottom: 1px solid rgba(227,181,83,.35);
+  font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold);
+}
+.rows-group:first-child { margin-top: 0; }
+.rows-group span { color: var(--muted); letter-spacing: .5px; }
+.rows-group + .row { border-top: 0; }
+.panel-title .svg-icon + * { margin-left: 0; }
+.panel-title:has(.svg-icon)::before { display: none; }
+.muted-note { color: var(--muted) !important; font-size: 13px; }
+@media (max-width: 760px) { .stat small { white-space: normal; } }

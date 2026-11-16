@@ -22,6 +22,9 @@
     positions: { en: "Professional experience", fr: "Expérience professionnelle" },
     education: { en: "Education", fr: "Formation" },
     projects: { en: "Research projects", fr: "Projets de recherche" },
+    funding: { en: "Funding & supervision", fr: "Financements & encadrement" },
+    grants: { en: "Research funding", fr: "Financements de recherche" },
+    supervision: { en: "Supervision", fr: "Encadrement" },
     pubs: { en: "Publications", fr: "Publications" },
     selPubs: { en: "Selected publications", fr: "Publications choisies" },
     articles: { en: "Peer-reviewed articles", fr: "Articles dans des revues à comité de lecture" },
@@ -162,8 +165,16 @@
     return html;
   }
 
+  function fundingSupervision() {
+    const g = (CV.funding || []).filter(inLen), su = (CV.supervision || []).filter(inLen);
+    let html = "";
+    if (g.length) html += `<h3>${t(W.grants)}</h3>` + g.map((x) => entry(t(x.date), t(x.title), "", t(x.desc))).join("");
+    if (su.length) html += `<h3>${t(W.supervision)}</h3>` + su.map((x) => entry(t(x.date), t(x.title), "", t(x.desc))).join("");
+    return html;
+  }
+
   function teaching() {
-    let html = `<p class="cv-p">${t(CV.teachingSummary)}</p>`;
+    let html = `<p class="cv-p">${t(len === 3 && CV.teachingSummaryShort ? CV.teachingSummaryShort : CV.teachingSummary)}</p>`;
     if (len === FULL)
       html += `<table class="cv-table">${CV.teaching.map((c) =>
         `<tr><td>${c.date}</td><td><b>${t(c.course)}</b><br><span>${t(c.details)}</span></td><td class="r">${c.hours ? c.hours + " h" : "—"}</td></tr>`).join("")}</table>`;
@@ -188,13 +199,14 @@
     parts.push(section(W.positions, positions()));
     parts.push(section(W.education, education()));
     if (len > 1) parts.push(section(W.projects, projects()));
+    if (len > 1) parts.push(section(W.funding, fundingSupervision()));
     parts.push(section(len === 1 ? W.selPubs : W.pubs, publications()));
     parts.push(section(len === 1 ? W.selTalks : W.talks, talks()));
     if (len > 1) parts.push(section(W.teaching, teaching()));
     if (len > 1) parts.push(section(W.service, service()));
     parts.push(section(W.skills, skills()));
     parts.push(section(W.languages, `<p class="cv-p">${t(CV.languages)}</p>`));
-    if (len > 1) parts.push(`<p class="cv-p cv-kw"><b>${L() === "fr" ? "Mots-clés\u00a0:" : "Keywords:"}</b> ${t(CV.keywords)}</p>`);
+    if (len === FULL) parts.push(`<p class="cv-p cv-kw"><b>${L() === "fr" ? "Mots-clés\u00a0:" : "Keywords:"}</b> ${t(CV.keywords)}</p>`);
 
     const doc = document.getElementById("cv");
     doc.className = `cv len-${len === FULL ? "full" : len}`;

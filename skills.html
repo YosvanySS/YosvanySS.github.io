@@ -11,56 +11,109 @@
   <script src="assets/js/lang.js"></script>
 </head>
 <body>
-  <!-- Each text is written twice: <en>English</en><fr>Français</fr> -->
+  <!-- Each text is written twice: <en>English</en><fr>Français</fr>
+       SKILL LEVEL: change the bar width (style="width:90%"); the label (Expert,
+       Advanced, …) is set automatically from it, at the bottom of this page. -->
   <main class="container">
     <div id="profile"></div>
 
-    <!-- To change a skill bar, edit the width (e.g. style="width:90%"). -->
+    <h2 class="section-title"><en>Research methods</en><fr>Méthodes de recherche</fr></h2>
     <div class="grid three">
       <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">⚛</div><div><h3><en>Density Functional Theory</en><fr>Théorie de la fonctionnelle de la densité</fr></h3><div class="lvl"><en>Expert</en><fr>Expert</fr></div></div></div>
-        <div class="bar"><i style="width:95%"></i></div>
-        <div class="chips"><span class="chip">Quantum ESPRESSO</span><span class="chip"><en>Defects</en><fr>Défauts</fr></span><span class="chip">Interfaces</span><span class="chip">Surfaces</span></div>
-      </section>
-      <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">🧪</div><div><h3><en>Molecular Dynamics</en><fr>Dynamique moléculaire</fr></h3><div class="lvl"><en>Expert</en><fr>Expert</fr></div></div></div>
+        <div class="skill-top"><div class="skill-icon"><i data-icon="atom"></i></div><div><h3><en>Density Functional Theory</en><fr>Théorie de la fonctionnelle de la densité</fr></h3><div class="lvl"></div></div></div>
         <div class="bar"><i style="width:90%"></i></div>
-        <div class="chips"><span class="chip">LAMMPS</span><span class="chip"><en>Langevin MD</en><fr>DM de Langevin</fr></span><span class="chip"><en>Displacement cascades</en><fr>Cascades de déplacement</fr></span><span class="chip"><en>Energy dissipation (LDFA)</en><fr>Dissipation d'énergie (LDFA)</fr></span></div>
+        <ul class="skill-list">
+          <li>Quantum ESPRESSO</li>
+          <li><en>Point defects and their energetics</en><fr>Défauts ponctuels et leur énergétique</fr></li>
+          <li><en>Surfaces and metallic interfaces</en><fr>Surfaces et interfaces métalliques</fr></li>
+          <li><en>Transition states (NEB) and phonons</en><fr>États de transition (NEB) et phonons</fr></li>
+        </ul>
       </section>
       <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">📈</div><div><h3><en>Rate-Equation Modeling</en><fr>Modèles cinétiques</fr></h3><div class="lvl"><en>Expert</en><fr>Expert</fr></div></div></div>
+        <div class="skill-top"><div class="skill-icon"><i data-icon="orbit"></i></div><div><h3><en>Molecular Dynamics</en><fr>Dynamique moléculaire</fr></h3><div class="lvl"></div></div></div>
         <div class="bar"><i style="width:90%"></i></div>
-        <div class="chips"><span class="chip"><en>Macroscopic rate equations</en><fr>Équations cinétiques macroscopiques</fr></span><span class="chip"><en>Statistical thermodynamics</en><fr>Thermodynamique statistique</fr></span><span class="chip"><en>H solubility</en><fr>Solubilité de H</fr></span><span class="chip"><en>NEB barriers</en><fr>Barrières NEB</fr></span></div>
+        <ul class="skill-list">
+          <li>LAMMPS</li>
+          <li><en>Classical and Langevin dynamics</en><fr>Dynamique classique et de Langevin</fr></li>
+          <li><en>Displacement cascades and sputtering</en><fr>Cascades de déplacement et pulvérisation</fr></li>
+          <li><en>Energy dissipation (electron–hole pairs, LDFA)</en><fr>Dissipation d'énergie (paires électron–trou, LDFA)</fr></li>
+        </ul>
       </section>
       <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">🤖</div><div><h3><en>Machine Learning</en><fr>Apprentissage automatique</fr></h3><div class="lvl"><en>Advanced</en><fr>Avancé</fr></div></div></div>
+        <div class="skill-top"><div class="skill-icon"><i data-icon="brain-circuit"></i></div><div><h3><en>Machine Learning</en><fr>Apprentissage automatique</fr></h3><div class="lvl"></div></div></div>
         <div class="bar"><i style="width:80%"></i></div>
-        <div class="chips"><span class="chip"><en>ML interatomic potentials</en><fr>Potentiels interatomiques ML</fr></span><span class="chip"><en>Training on DFT data</en><fr>Entraînement sur données DFT</fr></span><span class="chip"><en>Automated dataset workflows</en><fr>Génération automatisée de données</fr></span></div>
+        <ul class="skill-list">
+          <li><en>Machine-learning interatomic potentials</en><fr>Potentiels interatomiques par apprentissage automatique</fr></li>
+          <li><en>DFT training datasets</en><fr>Bases de données d'entraînement DFT</fr></li>
+          <li><en>Automated data-generation workflows</en><fr>Génération automatisée de données</fr></li>
+        </ul>
       </section>
       <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">🔷</div><div><h3><en>Solid-State Physics</en><fr>Physique du solide</fr></h3><div class="lvl"><en>Expert</en><fr>Expert</fr></div></div></div>
+        <div class="skill-top"><div class="skill-icon"><i data-icon="chart-line"></i></div><div><h3><en>Rate-Equation Modeling</en><fr>Modèles cinétiques</fr></h3><div class="lvl"></div></div></div>
+        <div class="bar"><i style="width:60%"></i></div>
+        <ul class="skill-list">
+          <li><en>Macroscopic rate equations</en><fr>Équations cinétiques macroscopiques</fr></li>
+          <li><en>Statistical thermodynamics</en><fr>Thermodynamique statistique</fr></li>
+          <li><en>Hydrogen solubility and trapping</en><fr>Solubilité et piégeage de l'hydrogène</fr></li>
+        </ul>
+      </section>
+      <section class="panel skill">
+        <div class="skill-top"><div class="skill-icon"><i data-icon="hexagon"></i></div><div><h3><en>Solid-State Physics</en><fr>Physique du solide</fr></h3><div class="lvl"></div></div></div>
         <div class="bar"><i style="width:90%"></i></div>
-        <div class="chips"><span class="chip"><en>Metals</en><fr>Métaux</fr></span><span class="chip">Diffusion</span><span class="chip"><en>Segregation</en><fr>Ségrégation</fr></span></div>
+        <ul class="skill-list">
+          <li><en>Metals and alloys</en><fr>Métaux et alliages</fr></li>
+          <li><en>Diffusion and segregation</en><fr>Diffusion et ségrégation</fr></li>
+          <li><en>Plasma–material interactions</en><fr>Interactions plasma–matériaux</fr></li>
+        </ul>
       </section>
       <section class="panel skill">
-        <div class="skill-top"><div class="skill-icon">⌨</div><div><h3><en>Programming</en><fr>Programmation</fr></h3><div class="lvl"><en>Advanced</en><fr>Avancé</fr></div></div></div>
+        <div class="skill-top"><div class="skill-icon"><i data-icon="code"></i></div><div><h3><en>Programming</en><fr>Programmation</fr></h3><div class="lvl"></div></div></div>
         <div class="bar"><i style="width:85%"></i></div>
-        <div class="chips"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Fortran</span><span class="chip">Pygame</span><span class="chip">three.js</span></div>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>Fortran</li>
+          <li>C++</li>
+          <li><en>Pygame (educational games)</en><fr>Pygame (jeux éducatifs)</fr></li>
+        </ul>
       </section>
     </div>
 
-    <div class="grid two" style="margin-top:22px">
+    <h2 class="section-title"><en>Teaching &amp; languages</en><fr>Enseignement &amp; langues</fr></h2>
+    <div class="grid two">
       <section class="panel">
-        <div class="panel-head"><h2 class="panel-title"><en>Teaching</en><fr>Enseignement</fr></h2></div>
-        <div class="chips"><span class="chip"><en>Mathematical Analysis</en><fr>Analyse mathématique</fr></span><span class="chip"><en>Differential Equations</en><fr>Équations différentielles</fr></span><span class="chip"><en>Electromagnetism</en><fr>Électromagnétisme</fr></span><span class="chip"><en>Optics</en><fr>Optique</fr></span><span class="chip"><en>Lab supervision</en><fr>Encadrement de TP</fr></span><span class="chip"><en>Moodle course design</en><fr>Conception de cours Moodle</fr></span><span class="chip">L1–L2 · 370+ h</span></div>
+        <div class="panel-head"><h2 class="panel-title"><en>Subjects I teach</en><fr>Disciplines enseignées</fr></h2></div>
+        <dl class="skill-groups">
+          <dt><i data-icon="zap"></i><en>Physics</en><fr>Physique</fr></dt>
+          <dd><en>Wave optics · Geometric optics · Electrokinetics · Electromagnetism</en><fr>Optique ondulatoire · Optique géométrique · Électrocinétique · Électromagnétisme</fr></dd>
+          <dt><i data-icon="sigma"></i><en>Mathematics</en><fr>Mathématiques</fr></dt>
+          <dd><en>Mathematics for engineering · Mathematical analysis · Differential equations</en><fr>Mathématiques pour l'ingénieur · Analyse mathématique · Équations différentielles</fr></dd>
+          <dt><i data-icon="monitor"></i><en>Computing &amp; labs</en><fr>Informatique &amp; TP</fr></dt>
+          <dd><en>C++ programming · Experimental science labs</en><fr>Programmation C++ · Travaux pratiques de démarche scientifique</fr></dd>
+          <dt><i data-icon="lightbulb"></i><en>Teaching methods</en><fr>Pédagogie</fr></dt>
+          <dd><en>Course spaces on AMeTICE / Moodle · Flipped classroom · Interactive tools (Wooclap) · Generative AI in teaching (CIPE training)</en><fr>Espaces de cours AMeTICE / Moodle · Classe inversée · Outils interactifs (Wooclap) · IA générative dans l'enseignement (formation CIPE)</fr></dd>
+        </dl>
       </section>
       <section class="panel">
         <div class="panel-head"><h2 class="panel-title"><en>Languages</en><fr>Langues</fr></h2></div>
-        <div class="chips"><span class="chip"><en>Spanish · native</en><fr>Espagnol · langue maternelle</fr></span><span class="chip"><en>French · C1</en><fr>Français · C1</fr></span><span class="chip"><en>English · C1</en><fr>Anglais · C1</fr></span></div>
+        <div class="lang-rows">
+          <div><span><en>Spanish</en><fr>Espagnol</fr></span><div class="bar"><i style="width:100%"></i></div><small><en>Native</en><fr>Langue maternelle</fr></small></div>
+          <div><span><en>French</en><fr>Français</fr></span><div class="bar"><i style="width:85%"></i></div><small>C1</small></div>
+          <div><span><en>English</en><fr>Anglais</fr></span><div class="bar"><i style="width:85%"></i></div><small>C1</small></div>
+        </div>
       </section>
     </div>
   </main>
 
+  <script src="assets/js/icons.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script>
+    // Level label from the bar width, so they always match
+    document.querySelectorAll(".skill").forEach((card) => {
+      const w = parseFloat(card.querySelector(".bar i").style.width);
+      const [en, fr] = w >= 88 ? ["Expert", "Expert"] : w >= 75 ? ["Advanced", "Avancé"]
+        : w >= 60 ? ["Proficient", "Confirmé"] : ["Intermediate", "Intermédiaire"];
+      card.querySelector(".lvl").innerHTML = `<en>${en}</en><fr>${fr}</fr>`;
+    });
+  </script>
 </body>
 </html>

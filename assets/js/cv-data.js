@@ -46,7 +46,7 @@ const CV = {
       org: { en: "SRMP, CEA-Saclay, France", fr: "SRMP, CEA-Saclay, France" },
       desc: { en: "Molecular dynamics of displacement cascades in germanium crystals with machine-learning interatomic potentials that I developed.",
               fr: "Dynamique moléculaire des cascades de déplacement dans le germanium avec des potentiels interatomiques ML que j'ai développés." } },
-    { cv: 3, date: { en: "Dec 2024 – Jan 2025", fr: "déc. 2024 – janv. 2025" },
+    { cv: 5, date: { en: "Dec 2024 – Jan 2025", fr: "déc. 2024 – janv. 2025" },
       title: { en: "Research Physicist (CNRS contract)", fr: "Physicien chercheur (contrat CNRS)" },
       org: { en: "PIIM Laboratory, Aix-Marseille University, France", fr: "Laboratoire PIIM, Aix-Marseille Université, France" },
       desc: { en: "DFT dataset and automated workflow for a machine-learning potential of the W/Cu interface, with CEA-Cadarache and the University of Helsinki.",
@@ -79,6 +79,20 @@ const CV = {
               fr: "Diplôme d'or (summa cum laude), moyenne 4,942 / 5. Mémoire : diffusion des atomes de N sur les surfaces de W par dynamique moléculaire de Langevin." } },
   ],
 
+  // Funding and supervision (shown in the 3-page and full CVs)
+  funding: [
+    { cv: 3, date: { en: "2025 – 2026", fr: "2025 – 2026" }, title: { en: "ANR project SPARTES, selected for phase 2", fr: "Projet ANR SPARTES, retenu en phase 2" },
+      desc: { en: "“Sputtering of atomic hydrogen and oxygen on tungsten surface”: collaborative project, 48 months, 360 k€ requested. Co-author of the proposal; leader of the molecular dynamics sub-task (D ions on W surfaces, sputtering of adsorbed H and O).",
+              fr: "« Sputtering of atomic hydrogen and oxygen on tungsten surface » : projet de recherche collaborative, 48 mois, 360 k€ demandés. Co-rédacteur ; responsable de la sous-tâche de dynamique moléculaire (ions D sur surfaces de W, pulvérisation de H et O adsorbés)." } },
+  ],
+  supervision: [
+    { cv: 3, date: { en: "2025 – present", fr: "2025 – aujourd'hui" }, title: { en: "PhD co-supervision: Sophie Stibac", fr: "Co-encadrement de thèse : Sophie Stibac" },
+      desc: { en: "“Machine Learning Interatomic Potential for the W-Cu System in View of Modeling Interfaces in ITER Monoblocks”. Supervisors Y. Ferro (AMU-PIIM) and E. Hodille (CEA-IRFM), ED352.",
+              fr: "« Machine Learning Interatomic Potential for the W-Cu System in View of Modeling Interfaces in ITER Monoblocks ». Directeurs Y. Ferro (AMU-PIIM) et E. Hodille (CEA-IRFM), ED352." } },
+    { cv: 5, date: { en: "2026", fr: "2026" }, title: { en: "Doctoral follow-up committee (CSI) member", fr: "Membre de comité de suivi individuel (CSI)" },
+      desc: { en: "First-year PhD student, ED352.", fr: "Doctorante en 1re année, ED352." } },
+  ],
+
   projects: [
     { cv: 3, title: { en: "Transmutation alloys (W–Re) for fusion", fr: "Alliages de transmutation (W–Re) pour la fusion" }, date: { en: "Current · PIIM", fr: "Actuel · PIIM" },
       desc: { en: "Multiscale methodology (DFT → ML potentials → molecular dynamics → rate equations) for hydrogen isotopes in tungsten–rhenium alloys and their defects.",
@@ -88,13 +102,13 @@ const CV = {
     { cv: 3, title: { en: "Hydrogen at the W/Cu interface (ITER)", fr: "L'hydrogène à l'interface W/Cu (ITER)" }, date: { en: "2021 – 2025 · PIIM", fr: "2021 – 2025 · PIIM" },
       desc: { en: "Solubility, trapping and diffusion of hydrogen at the interface of the ITER divertor monoblocks; DFT dataset for a W–Cu ML potential shared with the University of Helsinki and CEA-Cadarache.",
               fr: "Solubilité, piégeage et diffusion de l'hydrogène à l'interface des monoblocs du divertor d'ITER ; base de données DFT pour un potentiel ML W–Cu partagée avec l'Université d'Helsinki et le CEA-Cadarache." } },
-    { cv: 3, title: { en: "Eley–Rideal recombination on tungsten", fr: "Recombinaison Eley–Rideal sur le tungstène" }, date: { en: "2019 – 2021 · Havana", fr: "2019 – 2021 · La Havane" },
+    { cv: 5, title: { en: "Eley–Rideal recombination on tungsten", fr: "Recombinaison Eley–Rideal sur le tungstène" }, date: { en: "2019 – 2021 · Havana", fr: "2019 – 2021 · La Havane" },
       desc: { en: "Isotope effects (H, D, T) and energy dissipation in Eley–Rideal abstraction on W(100) and W(110), with the University of Bordeaux.",
               fr: "Effets isotopiques (H, D, T) et dissipation d'énergie dans l'abstraction Eley–Rideal sur W(100) et W(110), avec l'Université de Bordeaux." } },
   ],
 
   articles: [
-    { cv: 1, year: 2026, authors: "Y. Silva-Solís, J. Denis, E. A. Hodille, Y. Ferro", title: "Hydrogen transport at metallic interfaces: modeling the tungsten–copper system", journal: "Physical Review Materials", ref: "(2026)", doi: "10.1103/lnnc-h1yy" },
+    { cv: 1, year: 2026, authors: "Y. Silva-Solís, J. Denis, E. A. Hodille, Y. Ferro", title: "Hydrogen transport at metallic interfaces: modeling the tungsten–copper system", journal: "Physical Review Materials", ref: "10, 045404 (2026)", doi: "10.1103/lnnc-h1yy" },
     { cv: 1, year: 2025, authors: "O. Galparsoro, R. Martin-Barrios, P. E. Ibáñez-Almaguer, …, Y. Silva-Solís, et al.", title: "Isotope effects in Eley–Rideal abstraction of hydrogen from tungsten surfaces: the role of dissipation", journal: "Physical Chemistry Chemical Physics", ref: "(2025)", doi: "10.1039/D4CP04063E" },
     { cv: 5, year: 2025, authors: "Y. Silva-Solís, J. Denis, E. A. Hodille, Y. Ferro", title: "Corrigendum: Solution and solubility of H atoms at the W/Cu interface", journal: "Journal of Physics: Condensed Matter", ref: "37, 129501 (2025)", doi: "10.1088/1361-648X/ada7b7" },
     { cv: 1, year: 2024, authors: "Y. Silva-Solís, J. Denis, E. A. Hodille, Y. Ferro", title: "Solution and solubility of H atoms at the W/Cu interface", journal: "Journal of Physics: Condensed Matter", ref: "36, 465001 (2024)", doi: "10.1088/1361-648X/ad6f62" },
@@ -106,6 +120,11 @@ const CV = {
   ],
 
   teaching: [
+    { date: "2025 – 2026", course: { en: "Wave Optics (lectures & tutorials)", fr: "Optique ondulatoire (CM & TD)" }, details: { en: "Aix-Marseille University · Bachelor SPI, ISM track · AMeTICE course space", fr: "Aix-Marseille Université · Licence SPI, parcours ISM · espace AMeTICE" }, hours: 41 },
+    { date: "2025 – 2026", course: { en: "Electrokinetics (lectures & tutorials)", fr: "Électrocinétique (CM & TD)" }, details: { en: "Aix-Marseille University · Polytech PEIP · flipped classroom", fr: "Aix-Marseille Université · PEIP Polytech · classe inversée" }, hours: 31 },
+    { date: "2025 – 2026", course: { en: "Mathematics for Engineering (tutorials & labs)", fr: "Mathématiques ISM 2 (TD & TP)" }, details: { en: "Aix-Marseille University · Bachelor SPI, ISM track · AMeTICE course space", fr: "Aix-Marseille Université · Licence SPI, parcours ISM · espace AMeTICE" }, hours: 25 },
+    { date: "2025 – 2026", course: { en: "Scientific Method 4 (labs)", fr: "Démarche scientifique 4 (TP)" }, details: { en: "Aix-Marseille University · Bachelor in Physics & Chemistry", fr: "Aix-Marseille Université · Licence Physique Chimie" }, hours: 23 },
+    { date: "2025 – 2026", course: { en: "C++ Programming (labs)", fr: "Programmation en C++ (TP)" }, details: { en: "Aix-Marseille University · Professional bachelor in Instrumentation", fr: "Aix-Marseille Université · Licence pro Métiers de l'instrumentation" }, hours: 21 },
     { date: "2020 – 2021", course: { en: "Mathematical Analysis III", fr: "Analyse mathématique III" }, details: { en: "L2 · ~90 students · tutorials + Moodle", fr: "L2 · ~90 étudiants · TD + Moodle" }, hours: 136 },
     { date: "2020 – 2021", course: { en: "Geometric and Wave Optics", fr: "Optique géométrique et ondulatoire" }, details: { en: "L2 · ~70 students · tutorials + Moodle", fr: "L2 · ~70 étudiants · TD + Moodle" }, hours: 54 },
     { date: "2020 – 2021", course: { en: "Mathematical Analysis II", fr: "Analyse mathématique II" }, details: { en: "L1 · ~50 students · tutorials + Moodle", fr: "L1 · ~50 étudiants · TD + Moodle" }, hours: 34 },
@@ -113,19 +132,26 @@ const CV = {
     { date: "2019 – 2020", course: { en: "Electromagnetism", fr: "Électromagnétisme" }, details: { en: "L2 · ~30 students · tutorials & labs", fr: "L2 · ~30 étudiants · TD & TP" }, hours: 46 },
     { date: "2015 – 2019", course: { en: "Electromagnetism · Optics", fr: "Électromagnétisme · Optique" }, details: { en: "Student lab assistant", fr: "Étudiant assistant de TP" }, hours: null },
   ],
-  teachingSummary: { en: "372 h of tutorials and labs (L1–L2) for ~300 students in mathematics and physics, University of Havana (2019–2021); co-author of two textbooks on differential equations.",
-                     fr: "372 h de TD et TP (L1–L2) pour ~300 étudiants en mathématiques et physique, Université de La Havane (2019–2021) ; co-auteur de deux manuels d'équations différentielles." },
+  // Short version for the 3-page CV
+  teachingSummaryShort: { en: "513 h in total: Aix-Marseille University 2025–2026 (141 h ETD: wave optics, electrokinetics, mathematics, C++; AMeTICE course spaces, flipped classroom) and University of Havana 2019–2021 (372 h, L1–L2). Co-author of two textbooks; CIPE teacher training.",
+                          fr: "513 h au total : Aix-Marseille Université 2025–2026 (141 h ETD : optique ondulatoire, électrocinétique, mathématiques, C++ ; espaces AMeTICE, classe inversée) et Université de La Havane 2019–2021 (372 h, L1–L2). Co-auteur de deux manuels ; formations CIPE." },
+  teachingSummary: { en: "513 h in total. Aix-Marseille University (2025–2026): 141 h ETD of lectures, tutorials and labs in optics, electrokinetics, mathematics and C++ programming, with AMeTICE course spaces and flipped-classroom tutorials; internship defense jury (L3). University of Havana (2019–2021): 372 h of tutorials and labs (L1–L2) for ~300 students; co-author of two textbooks on differential equations. Teacher training (CIPE, 32 h) and mentoring program for new faculty.",
+                     fr: "513 h au total. Aix-Marseille Université (2025–2026) : 141 h ETD de CM, TD et TP en optique, électrocinétique, mathématiques et programmation C++, avec création d'espaces AMeTICE et TD en classe inversée ; jury de soutenance de stage (L3). Université de La Havane (2019–2021) : 372 h de TD et TP (L1–L2) pour ~300 étudiants ; co-auteur de deux manuels d'équations différentielles. Formations pédagogiques (CIPE, 32 h) et dispositif de mentorat des nouveaux enseignants-chercheurs." },
 
   organizing: [
+    { cv: 3, date: { en: "May 2026", fr: "mai 2026" }, title: { en: "PIIM laboratory seminars, Marseille", fr: "Séminaires du laboratoire PIIM, Marseille" },
+      desc: { en: "Organization and coordination; choosing and inviting speakers.", fr: "Organisation et coordination ; identification et invitation des intervenants." } },
+    { cv: 5, date: { en: "Feb 2026", fr: "févr. 2026" }, title: { en: "Half-day workshop on classical molecular dynamics, PIIM", fr: "Demi-journée thématique : dynamique moléculaire classique, PIIM" },
+      desc: { en: "Organizing committee and talk.", fr: "Comité d'organisation et présentation orale." } },
     { cv: 3, date: { en: "May 2024", fr: "mai 2024" }, title: { en: "HWS 2024, 17th Int. Workshop on Hydrogen Isotopes in Fusion Reactor Materials, Chamonix", fr: "HWS 2024, 17th Int. Workshop on Hydrogen Isotopes in Fusion Reactor Materials, Chamonix" },
       desc: { en: "Organizing committee: scientific program and website (budget 20 k€).", fr: "Comité d'organisation : programme scientifique et site web (budget 20 k€)." } },
-    { cv: 3, date: { en: "Jun 2023", fr: "juin 2023" }, title: { en: "Scientific Day of the Doctoral School ED352, Marseille", fr: "Journée scientifique de l'École doctorale ED352, Marseille" },
+    { cv: 5, date: { en: "Jun 2023", fr: "juin 2023" }, title: { en: "Scientific Day of the Doctoral School ED352, Marseille", fr: "Journée scientifique de l'École doctorale ED352, Marseille" },
       desc: { en: "Organizing committee: scientific program and logistics (budget 5 k€).", fr: "Comité d'organisation : programme scientifique et logistique (budget 5 k€)." } },
-    { cv: 3, date: { en: "Apr 2022", fr: "avr. 2022" }, title: { en: "IAEA Technical Meeting on Hydrogen Supersaturation and Defect Stabilization in Fusion Reactor Materials, Aix-en-Provence", fr: "Réunion technique de l'AIEA sur la sursaturation en hydrogène et la stabilisation des défauts, Aix-en-Provence" },
+    { cv: 5, date: { en: "Apr 2022", fr: "avr. 2022" }, title: { en: "IAEA Technical Meeting on Hydrogen Supersaturation and Defect Stabilization in Fusion Reactor Materials, Aix-en-Provence", fr: "Réunion technique de l'AIEA sur la sursaturation en hydrogène et la stabilisation des défauts, Aix-en-Provence" },
       desc: { en: "Organizing committee: scientific program (budget 20 k€).", fr: "Comité d'organisation : programme scientifique (budget 20 k€)." } },
   ],
   outreach: [
-    { cv: 3, date: { en: "Feb 2024", fr: "févr. 2024" }, title: { en: "PIIM Laboratory Open Day, Marseille", fr: "Journée portes ouvertes du laboratoire PIIM, Marseille" },
+    { cv: 5, date: { en: "Feb 2024", fr: "févr. 2024" }, title: { en: "PIIM Laboratory Open Day, Marseille", fr: "Journée portes ouvertes du laboratoire PIIM, Marseille" },
       desc: { en: "“Simulation & modeling” stand: the ITER project and our simulations for the public.", fr: "Stand « Simulation-modélisation » : le projet ITER et nos simulations pour le grand public." } },
     { cv: 3, date: { en: "Nov 2023", fr: "nov. 2023" }, title: { en: "Souk des Sciences, Aix-en-Provence", fr: "Souk des Sciences, Aix-en-Provence" },
       desc: { en: "Presented Hydro-jeux, an educational Python game I developed on hydrogen diffusion in materials.", fr: "Présentation d'Hydro-jeux, un jeu éducatif en Python que j'ai développé sur la diffusion de l'hydrogène dans les matériaux." } },
