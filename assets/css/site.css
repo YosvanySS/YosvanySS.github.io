@@ -453,3 +453,9 @@ img { max-width: 100%; display: block; }
 .student-now { color: var(--gold-2) !important; font-size: 12.5px; margin: 6px 0 0 !important; }
 @media (max-width: 960px) { .student-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .student-grid { grid-template-columns: 1fr; } }
+.student-duration {
+  display: inline-flex; align-items: center; gap: 6px; margin: -2px 0 12px !important;
+  font-size: 12.5px; font-weight: 600; color: var(--gold-2) !important;
+  background: var(--gold-dim); border: 1px solid rgba(227,181,83,.3); border-radius: 99px; padding: 3px 10px;
+}
+.student-duration .svg-icon { width: 13px; height: 13px; }

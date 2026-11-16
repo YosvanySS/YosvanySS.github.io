@@ -12,8 +12,23 @@
    title:     thesis or project title (stays in its original language)
    with:      other supervisors (optional, "" if none)
    now:       for former students, where they went (optional, { en, fr })
+   months:    length of a short stay (internship, Master project), e.g. 6 (optional)
+   period:    its dates, e.g. { en: "Feb – Jul 2026", fr: "févr. – juil. 2026" } (optional)
    ========================================================= */
 const STUDENTS = [
+  {
+    name: "Narmolak Singh",
+    photo: "",
+    level: "internship",
+    role: "main",
+    start: 2026,
+    end: null,
+    title: "Defect Evolution in Tungsten-Rhenium Alloys under Particle Irradiation",
+    with: "",
+    now: null,
+    months: null,      // ← internship length, e.g. 6
+    period: null,      // ← e.g. { en: "Feb – Jul 2026", fr: "févr. – juil. 2026" }
+  },
   {
     name: "Sophie Stibac",
     photo: "sophie-stibac.jpg",
@@ -22,7 +37,7 @@ const STUDENTS = [
     start: 2025,
     end: null,
     title: "Machine Learning Interatomic Potential for the W-Cu System in View of Modeling Interfaces in ITER Monoblocks",
-    with: "Y. Ferro (AMU-PIIM), E. Hodille (CEA-IRFM)",
+    with: "Y. Ferro (AMU-PIIM), E. Hodille (CEA-IRFM), J. Tranchida (CEA-IRESNE)",
     now: null,
   },
 ];
@@ -52,6 +67,7 @@ const STUDENTS = [
           <span class="badge ${lv.cls}">${both(lv.en, lv.fr)}</span>
           <span class="badge other">${years(s)}</span>
         </div>
+        ${s.months ? `<p class="student-duration">${typeof iconSVG === "function" ? iconSVG("calendar") : ""}${both(`${s.months} ${s.months > 1 ? "months" : "month"}`, `${s.months} mois`)}${s.period ? ` · ${both(s.period.en, s.period.fr)}` : ""}</p>` : ""}
         <p class="student-title" title="${s.title}">${s.title}</p>
         <p class="student-meta">${s.role === "co" ? both("Co-supervision", "Co-encadrement") : both("Supervision", "Encadrement")}${s.with ? ` · ${both("with", "avec")} ${s.with}` : ""}</p>
         ${s.now ? `<p class="student-now">→ ${both(s.now.en, s.now.fr)}</p>` : ""}
