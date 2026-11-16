@@ -26,7 +26,7 @@ const STUDENTS = [
     title: "Defect Evolution in Tungsten-Rhenium Alloys under Particle Irradiation",
     with: "",
     now: null,
-    months: null,      // ← internship length, e.g. 6
+    months: 2,      // ← internship length, e.g. 6
     period: null,      // ← e.g. { en: "Feb – Jul 2026", fr: "févr. – juil. 2026" }
   },
   {
